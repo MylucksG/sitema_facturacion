@@ -1,0 +1,170 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+/* vietnamese */
+@font-face {
+  font-family: 'Josefin Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/josefinsans/v24/Qw3PZQNVED7rKGKxtqIqX5E-AVSJrOCfjY46_DjQbMlhLzTs.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Josefin Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/josefinsans/v24/Qw3PZQNVED7rKGKxtqIqX5E-AVSJrOCfjY46_DjQbMhhLzTs.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Josefin Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/josefinsans/v24/Qw3PZQNVED7rKGKxtqIqX5E-AVSJrOCfjY46_DjQbMZhLw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+.app-wraper {
+  background-color: #fafafa;
+  overflow-x: hidden;
+}
+
+.nav-loading {
+  width: 80px;
+  position: relative;
+  left: 8px;
+}
+
+.nav-loading-right {
+  width: 64px;
+  height: 40px;
+  right: 0px;
+}
+
+.primary-self-text {
+  color: rgb(0, 102, 255) !important;
+}
+
+.primary-background-color {
+  background-color: rgb(224, 91, 213) !important;
+}
+
+.text-default-color {
+  color: #777777;
+}
+
+.side-link.active {
+  color: rgb(0, 102, 255);
+  display: flex;
+  background-color: rgba(0, 102, 255, 0.1);
+  transition-delay: 0.2s;
+  transition: all 0.3 linear;
+}
+
+header {
+  min-height: 80px;
+}
+
+.skeleton-input-radius {
+  border-radius: 0.75rem !important;
+}
+
+.skeleton-image {
+  width: 3.2rem !important;
+  height: 3.2rem !important;
+}
+
+/* Responsive Css */
+/* inspired by: https://css-tricks.com/responsive-data-tables/ */
+.responsiveTable {
+  width: 100%;
+}
+
+.responsiveTable td .tdBefore {
+  display: none;
+}
+
+@media screen and (max-width: 40em) {
+  /*
+    Force table elements to not behave like tables anymore
+    Hide table headers (but not display: none;, for accessibility)
+  */
+
+  .responsiveTable table,
+  .responsiveTable thead,
+  .responsiveTable tbody,
+  .responsiveTable th,
+  .responsiveTable td,
+  .responsiveTable tr {
+    display: block;
+  }
+
+  .responsiveTable thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+    border-bottom: 2px solid #777;
+  }
+
+  .responsiveTable tbody tr {
+    /* border: 1px solid #000; */
+    padding: 0.25em;
+  }
+
+  .responsiveTable td.pivoted {
+    /* Behave like a "row" */
+    border: none !important;
+    position: relative;
+    padding-left: calc(50% + 10px) !important;
+    text-align: left !important;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+  }
+
+  .responsiveTable td .tdBefore {
+    /* Now like a table header */
+    position: absolute;
+    display: block;
+
+    /* Top/left values mimic padding */
+    left: 1rem;
+    width: calc(50% - 20px);
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    text-align: left !important;
+    font-weight: 600;
+  }
+}
+
+br {
+  height: 0 !important;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.inline-block {
+  display: inline-block !important;
+}
+
+.modal-container {
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+}
+
+.fixed-body-scroll {
+  /* position: fixed; */
+}
+
+@page {
+  size: landscape;
+}
